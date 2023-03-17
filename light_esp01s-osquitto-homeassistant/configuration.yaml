@@ -1,0 +1,79 @@
+
+# Loads default set of integrations. Do not remove.
+default_config:
+
+# Load frontend themes from the themes folder
+frontend:
+  themes: !include_dir_merge_named themes
+
+# Text to speech
+tts:
+  - platform: google_translate
+
+automation: !include automations.yaml
+script: !include scripts.yaml
+scene: !include scenes.yaml
+
+
+# mqtt服务设置
+mqtt:
+  # 
+  light:
+    - name: "mqtt_light_kt"
+      state_topic: "home/light/kt"
+      command_topic: "home/light/kt"
+      payload_on: "on"
+      payload_off: "off"
+      qos: 1
+      
+    - name: "mqtt_light_cf"
+      state_topic: "home/light/cf"
+      command_topic: "home/light/cf"
+      payload_on: "on"
+      payload_off: "off"
+      qos: 1
+      
+    - name: "mqtt_light_yt"
+      state_topic: "home/light/yt"
+      command_topic: "home/light/yt"
+      payload_on: "on"
+      payload_off: "off"
+      qos: 1
+      
+    - name: "mqtt_light_bbws"
+      state_topic: "home/light/bbws"
+      command_topic: "home/light/bbws"
+      payload_on: "on"
+      payload_off: "off"
+      qos: 1
+      
+    - name: "mqtt_light_llws"
+      state_topic: "home/light/llws"
+      command_topic: "home/light/llws"
+      payload_on: "on"
+      payload_off: "off"
+      qos: 1
+      
+    - name: "mqtt_light_wsj"
+      state_topic: "home/light/wsj"
+      command_topic: "home/light/wsj"
+      payload_on: "on"
+      payload_off: "off"
+      qos: 1
+      
+
+
+# # 添加测试灯
+#   # 设备类型 MQTT
+#   - platform: mqtt
+#   # 设备名字
+#     name: "测试灯"
+#   # 订阅主题
+#     state_topic: "light/td"
+#   # 发布命令的主题
+#     command_topic: "light/td"
+#   # 命令格式  on 开灯 和 off 关灯
+#     payload_on: "on"
+#     payload_off: "off"
+
+
